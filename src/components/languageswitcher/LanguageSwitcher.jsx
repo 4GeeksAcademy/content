@@ -14,8 +14,10 @@ export const LanguageSwitcher = ({ current, translations }) => {
         <ul>
         {
             Object.entries(translations).filter(lang => lang[0] !== current).map( lang => {
+                let plain = window.localStorage.getItem("plain")
                 const LangIcon = icons[lang[0]];
-                return (<li><Link to={"/"+lang[1]}><LangIcon /></Link></li>);
+
+                return (<li><Link to={"/"+lang[1]+`${plain ? "?plain=true": ""}`}><LangIcon /></Link></li>);
             })
         }
         </ul>

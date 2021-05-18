@@ -40,7 +40,7 @@ class Navbar extends React.Component {
 					</button>
 
 					<div
-						className={`navbar-collapse collapse ${this.state.change && "show"}`}
+						className={`navbar-collapse collapse ${this.state.change && "show"} navbarFont`}
 						id="navbarSupportedContent">
 						<ul className="navbar-nav mr-auto text-center">
 							<li className="nav-item m-0">
@@ -68,6 +68,15 @@ class Navbar extends React.Component {
 								<a href="https://projects.breatheco.de" className="nav-link">
 									<p className={`nav-link ${this.state.change && "border-bottom"}`}>
 										Build
+									</p>
+								</a>
+							</li>
+							<li className="nav-item mt-0">
+								<a href="https://4geeksacademy.com/" className="nav-link">
+									<p className={`nav-link ${this.state.change && "border-bottom"}`} >
+										Coding Bootcamp
+										<span className="position-relative d-none d-lg-inline" style={{color: '#007bff', top: "20px", left: "-66px", fontSize: "14px", fontStyle: "italic"}}
+										>sponsored</span>
 									</p>
 								</a>
 							</li>
