@@ -18,14 +18,12 @@ export const LanguageSwitcher = ({ current, translations }) => {
             Object.entries(translations).filter(lang => lang[0] !== current).map( lang => {
                 let plain = () => {
                     if(isBrowser){
-                        window.localStorage.getItem("plain")
-                    } else {
-                        return false
+                        return window.localStorage.getItem("plain")
                     }
                 }
                 const LangIcon = icons[lang[0]];
 
-                return (<li><Link to={"/"+lang[1]+`${plain ? "?plain=true": ""}`}><LangIcon /></Link></li>);
+                return (<li><Link to={"/"+lang[1]+`${plain() ? "?plain=true": ""}`}><LangIcon /></Link></li>);
             })
         }
         </ul>
