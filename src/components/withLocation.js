@@ -2,12 +2,18 @@ import React from 'react';
 import { Location } from '@reach/router';
 import queryString from 'query-string';
 
+const isBrowser = typeof window !== "undefined"
+
 const createStorage = (plain) => {
-  let keyParameter = queryString.parse(plain)
-  if(keyParameter.plain){
-    window.localStorage.setItem("plain", true)
-  } else {
-    window.localStorage.removeItem("plain")
+  let parameterKey = queryString.parse(plain)
+
+  if(isBrowser){
+    if(parameterKey.plain) {
+      window.localStorage.setItem("plain", true)
+      
+    } else {
+      window.localStorage.removeItem("plain")
+    }
   }
 }
 
