@@ -11,6 +11,7 @@ import '../../scss/index.scss';
 
 import "prismjs/themes/prism-okaidia.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";
+import Footer from '../Footer';
 
 export const Layout = ({ children, seo }) => (
  <StaticQuery
@@ -36,6 +37,7 @@ export const Layout = ({ children, seo }) => (
             {children}
             </div>
         </div>
+        <Footer/>
       </div>
    )}}
  />
